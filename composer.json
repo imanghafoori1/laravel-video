@@ -1,0 +1,44 @@
+{
+  "name": "imanghafoori/laravel-video",
+  "description": "A laravel package to stream video content.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Iman Ghafoori",
+      "email": "imanghafoori1@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Iman\\Streamer\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Iman\\Streamer\\StreamServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^7.2.3",
+    "laravel/framework": "~5.1|6.*"
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.0",
+    "mockery/mockery": "^0.9.9"
+  },
+  "suggest": {
+    "imanghafoori/laravel-heyman": "It allows to write expressive code to authorize, validate and authenticate.",
+    "imanghafoori/laravel-decorator": "Allows you to easily apply the decorator pattern.",
+    "imanghafoori/laravel-terminator": "Gives you opportunity to refactor your controllers.",
+    "imanghafoori/laravel-anypass": " Allows you login with any password in local environment.",
+    "imanghafoori/laravel-masterpass": "You can easily set a master password without code change."
+  }
+}
