@@ -1,9 +1,8 @@
 <?php
 
-namespace Imanghafoori\Streamer;
+namespace Iman\Streamer;
 
 use Illuminate\Http\Response;
-use Iman\Streamer\VideoStreamer;
 use Illuminate\Support\ServiceProvider;
 
 class StreamServiceProvider extends ServiceProvider
@@ -16,7 +15,7 @@ class StreamServiceProvider extends ServiceProvider
     public function register()
     {
         Response::macro('streamVideoFile', function ($filePath) {
-            $this->stream(function () use ($filePath) {
+            return response()->stream(function () use ($filePath) {
                 $stream = new VideoStreamer($filePath);
                 $stream->start();
             });
