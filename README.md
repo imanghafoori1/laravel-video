@@ -6,23 +6,11 @@ Install via Composer
 
     composer require imanghafoori/laravel-video
 
-Publish Configuration
-
-    php artisan vendor:publish --tag=larastreamer
-
 ## Usage
 
+```php
+return response()->streamVideoFile($pathToVideoFile);
+```
 
-    
-Just send filename on route and stream! 
-
-Or just build your own method following this- 
-    
-
-
-## Note 
-
-Default file base path is set to - 
-
-    storage_path('app/uploads/')
-
+and that's it ! you can play your video file with HTML 5 video tag !
+and your file remains private.
