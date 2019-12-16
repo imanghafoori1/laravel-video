@@ -9,10 +9,22 @@ Install via Composer
 ## Usage
 
 ```php
-return response()->streamVideoFile($pathToVideoFile);
+Class VideoPlayerController extends Controller {
+
+    function playVideo() {
+    
+        // after checking access to see the video...
+
+        $pathToVideoFile = storage_path('/videos/my_vid.mp4');
+
+        return response()->streamVideoFile($pathToVideoFile);
+    }
+}
 ```
 
-and that's it ! you can play your video file with HTML 5 video tag !
+`'streamVideoFile'` is a macro on the response which is introduced by this package.
+
+That's it ! you can play your video file with HTML 5 video tag !
 and your file remains private.
 
 --------------------
@@ -42,7 +54,6 @@ As always if you found this package useful and you want to encourage us to maint
 
 - https://github.com/imanghafoori1/laravel-widgetize
 
-
 -----------------
 
 ### Laravel Terminator
@@ -50,7 +61,6 @@ As always if you found this package useful and you want to encourage us to maint
  :gem: A minimal yet powerful package to give you opportunity to refactor your controllers.
 
 - https://github.com/imanghafoori1/laravel-terminator
-
 
 -----------------
 
