@@ -4,9 +4,9 @@ namespace Iman\Streamer;
 
 class VideoStreamer
 {
-    private $path = "";
+    private $path = '';
 
-    private $stream = "";
+    private $stream = '';
 
     private $buffer = 102400;
 
@@ -16,7 +16,7 @@ class VideoStreamer
 
     private $size = 0;
 
-    private $mime = "";
+    private $mime = '';
 
     public function __construct($filePath = '')
     {
@@ -26,8 +26,7 @@ class VideoStreamer
     }
 
     /**
-     * Open stream
-     *
+     * Open stream.
      */
     private function open()
     {
@@ -37,23 +36,22 @@ class VideoStreamer
     }
 
     /**
-     * Set proper header to serve the video content
-     *
+     * Set proper header to serve the video content.
      */
     private function setHeader()
     {
         ob_get_clean();
-        header("Content-Type: " . $this->mime);
-        header("Cache-Control: max-age=2592000, public");
-        header("Expires: " . gmdate('D, d M Y H:i:s', time() + 2592000) . ' GMT');
-        header("Last-Modified: " . gmdate('D, d M Y H:i:s', @filemtime($this->path)) . ' GMT');
+        header('Content-Type: '.$this->mime);
+        header('Cache-Control: max-age=2592000, public');
+        header('Expires: '.gmdate('D, d M Y H:i:s', time() + 2592000).' GMT');
+        header('Last-Modified: '.gmdate('D, d M Y H:i:s', @filemtime($this->path)).' GMT');
         $this->start = 0;
         $this->size = filesize($this->path);
         $this->end = $this->size - 1;
-        header("Accept-Ranges: 0-" . $this->end);
+        header('Accept-Ranges: 0-'.$this->end);
 
         if (! isset($_SERVER['HTTP_RANGE'])) {
-            header("Content-Length: " . $this->size);
+            header('Content-Length: '.$this->size);
 
             return;
         }
@@ -89,13 +87,12 @@ class VideoStreamer
         $length = $this->end - $this->start + 1;
         fseek($this->stream, $this->start);
         header('HTTP/1.1 206 Partial Content');
-        header("Content-Length: " . $length);
-        header("Content-Range: bytes $this->start-$this->end/" . $this->size);
+        header('Content-Length: '.$length);
+        header("Content-Range: bytes $this->start-$this->end/".$this->size);
     }
 
     /**
-     * close curretly opened stream
-     *
+     * close curretly opened stream.
      */
     private function end()
     {
@@ -105,8 +102,7 @@ class VideoStreamer
     }
 
     /**
-     * perform the streaming of calculated range
-     *
+     * perform the streaming of calculated range.
      */
     private function stream()
     {
@@ -125,8 +121,7 @@ class VideoStreamer
     }
 
     /**
-     * Start streaming video content
-     *
+     * Start streaming video content.
      */
     public function start()
     {
