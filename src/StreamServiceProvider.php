@@ -17,7 +17,7 @@ class StreamServiceProvider extends ServiceProvider
         Response::macro('streamVideoFile', function ($filePath) {
             return response()->stream(function () use ($filePath) {
                 $stream = new VideoStreamer($filePath);
-                $stream->start();
+                return $stream->start();
             });
         });
     }
