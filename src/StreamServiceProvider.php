@@ -2,7 +2,6 @@
 
 namespace Iman\Streamer;
 
-use Illuminate\Http\Response;
 use Illuminate\Support\ServiceProvider;
 
 class StreamServiceProvider extends ServiceProvider
