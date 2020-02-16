@@ -14,13 +14,7 @@ class StreamServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Response::macro('streamVideoFile', function ($filePath) {
-            return response()->stream(function () use ($filePath) {
-                $stream = new VideoStreamer($filePath);
-
-                return $stream->start();
-            });
-        });
+        $this->mergeConfigFrom(__DIR__.'/config.php', 'laravel_video');
     }
 
     /**
@@ -30,6 +24,6 @@ class StreamServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([__DIR__.'/config.php' => config_path('laravel_video.php')], 'laravel_video');
     }
 }
