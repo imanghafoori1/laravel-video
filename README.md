@@ -13,16 +13,25 @@ Install via Composer
 
 ## Usage:
 
-![image](https://user-images.githubusercontent.com/6961695/70920742-4f5d6680-2038-11ea-8a06-b878a20d00d4.png)
+```php
+<?php
 
+use Iman\Streamer\VideoStreamer;
 
-`'streamVideoFile'` is a macro on the response which is introduced by this package.
+Route::get('/home', function () {
+    $path = public_path('vid.mp4');
+    
+    VideoStreamer::streamFile($path);
+});
 
-That's it ! you can play your video file with HTML 5 video tag !
+```
+
+That's it ! you can play your video file !
+You do not need to `return` from your controller
 
 ## Compatibility:
 
-- Laravel: v5.5 or above
+- Laravel: v5.1 or above
 - Php: 7.2 or above
 
 --------------------
