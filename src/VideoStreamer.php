@@ -18,21 +18,11 @@ class VideoStreamer
 
     private $mime = '';
 
-    public function __construct($filePath = '')
+    public function __construct($filePath = '', $stream)
     {
         $this->path = $filePath;
-
+        $this->stream = $stream;
         $this->mime = mime_content_type($filePath);
-    }
-
-    /**
-     * Open stream.
-     */
-    private function open()
-    {
-        if (! ($this->stream = fopen($this->path, 'rb'))) {
-            die('Could not open stream for reading');
-        }
     }
 
     /**
@@ -57,11 +47,12 @@ class VideoStreamer
         }
 
         $c_end = $this->end;
-
         [
             ,
             $range,
         ] = explode('=', $_SERVER['HTTP_RANGE'], 2);
+
+
         if (strpos($range, ',') !== false) {
             header('HTTP/1.1 416 Requested Range Not Satisfiable');
             header("Content-Range: bytes $this->start-$this->end/$this->size");
@@ -73,6 +64,12 @@ class VideoStreamer
         } else {
             $range = explode('-', $range);
             $c_start = $range[0];
+
+            if (  isset($range[1]) && is_numeric($range[1]) ) {
+                \Log::info('$range:'. $range[1]. gettype($range[1]));
+            } else {
+                \Log::info('default: '. $c_end);
+            }
 
             $c_end = (isset($range[1]) && is_numeric($range[1])) ? $range[1] : $c_end;
         }
@@ -92,23 +89,14 @@ class VideoStreamer
     }
 
     /**
-     * close curretly opened stream.
-     */
-    private function end()
-    {
-        fclose($this->stream);
-
-        exit;
-    }
-
-    /**
      * perform the streaming of calculated range.
      */
     private function stream()
     {
         $i = $this->start;
         set_time_limit(0);
-        while (! feof($this->stream) && $i <= $this->end) {
+        $readBytes = 0;
+        while (! feof($this->stream) && $i <= $this->end && $readBytes < $this->buffer * 3) {
             $bytesToRead = $this->buffer;
             if (($i + $bytesToRead) > $this->end) {
                 $bytesToRead = $this->end - $i + 1;
@@ -117,6 +105,7 @@ class VideoStreamer
             echo $data;
             flush();
             $i += $bytesToRead;
+            $readBytes += $bytesToRead;
         }
     }
 
@@ -125,9 +114,23 @@ class VideoStreamer
      */
     public function start()
     {
-        $this->open();
         $this->setHeader();
         $this->stream();
-        $this->end();
+
+        /**
+         * close curretly opened stream.
+         */
+        fclose($this->stream);
+        exit;
+    }
+
+    public static function streamFile($path)
+    {
+        $stream = fopen($path, 'rb');
+        if (! $stream) {
+            throw new \Exception('File not found in: '. $path, 6542);
+        }
+
+        (new static($path, $stream))->start();
     }
 }
