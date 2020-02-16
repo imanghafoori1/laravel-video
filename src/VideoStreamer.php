@@ -18,7 +18,7 @@ class VideoStreamer
 
     private $mime = '';
 
-    public function __construct($filePath = '', $stream)
+    public function __construct($filePath, $stream)
     {
         $this->path = $filePath;
         $this->stream = $stream;
@@ -52,7 +52,6 @@ class VideoStreamer
             $range,
         ] = explode('=', $_SERVER['HTTP_RANGE'], 2);
 
-
         if (strpos($range, ',') !== false) {
             header('HTTP/1.1 416 Requested Range Not Satisfiable');
             header("Content-Range: bytes $this->start-$this->end/$this->size");
@@ -65,10 +64,10 @@ class VideoStreamer
             $range = explode('-', $range);
             $c_start = $range[0];
 
-            if (  isset($range[1]) && is_numeric($range[1]) ) {
-                \Log::info('$range:'. $range[1]. gettype($range[1]));
+            if (isset($range[1]) && is_numeric($range[1])) {
+                \Log::info('$range:'.$range[1].gettype($range[1]));
             } else {
-                \Log::info('default: '. $c_end);
+                \Log::info('default: '.$c_end);
             }
 
             $c_end = (isset($range[1]) && is_numeric($range[1])) ? $range[1] : $c_end;
@@ -128,7 +127,7 @@ class VideoStreamer
     {
         $stream = fopen($path, 'rb');
         if (! $stream) {
-            throw new \Exception('File not found in: '. $path, 6542);
+            throw new \Exception('File not found in: '.$path, 6542);
         }
 
         (new static($path, $stream))->start();
