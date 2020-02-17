@@ -4,6 +4,8 @@
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=round-square)](LICENSE.md)
 [![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-video/v/stable)](https://packagist.org/packages/imanghafoori/laravel-video)
 [![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-video/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-video/build-status/master)
+[![Monthly Downloads](https://poser.pugx.org/imanghafoori/laravel-video/d/monthly)](https://packagist.org/packages/imanghafoori/laravel-video)
+[![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-video/downloads)](https://packagist.org/packages/imanghafoori/laravel-video)
 
 ## Installation:
 
