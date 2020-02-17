@@ -1,4 +1,4 @@
-# Video Streaming in laravel
+# Video Stream in laravel 🎥 
 
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-video"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-video.svg?style=round-square" alt="Quality Score"></img></a>
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=round-square)](LICENSE.md)
@@ -6,6 +6,9 @@
 [![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-video/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-video/build-status/master)
 [![Monthly Downloads](https://poser.pugx.org/imanghafoori/laravel-video/d/monthly)](https://packagist.org/packages/imanghafoori/laravel-video)
 [![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-video/downloads)](https://packagist.org/packages/imanghafoori/laravel-video)
+
+### Built with :heart: for every smart laravel developer
+
 
 ## Installation:
 
@@ -64,7 +67,7 @@ As always if you found this package useful and you want to encourage us to maint
 
 -----------------
 
-### Eloquent Relativity (new*)
+### Eloquent Relativity
 
 :gem: It allows you to decouple your eloquent models to reach a modular structure
 
