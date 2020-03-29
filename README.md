@@ -75,6 +75,15 @@ As always if you found this package useful and you want to encourage us to maint
 
 ----------------
 
+### Laravel Self Test
+
+:gem: It automatically tests your laravel application
+
+- https://github.com/imanghafoori1/laravel-self-test
+
+----------------
+
+
 ### 🍌 Reward me a crypto-banana 🍌
 so that I will have energy to start the next package for you.
 
