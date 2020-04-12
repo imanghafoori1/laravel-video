@@ -11,7 +11,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Iman\Streamer\Video;
 
-class VideoStreamStarted
+class VideoStreamFinished
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     /**
@@ -27,7 +27,6 @@ class VideoStreamStarted
     public function __construct(Video $video)
     {
         $this->video = $video;
-        info('video ended');
     }
 
     /**

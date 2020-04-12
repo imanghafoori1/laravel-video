@@ -2,6 +2,7 @@
 
 namespace Iman\Streamer;
 
+use Iman\Streamer\Events\VideoStreamFinished;
 use Iman\Streamer\Events\VideoStreamStarted;
 
 class VideoStreamer
@@ -97,6 +98,7 @@ class VideoStreamer
     private function end()
     {
         fclose($this->stream);
+        event(new VideoStreamFinished($this->video));
         exit;
     }
 
