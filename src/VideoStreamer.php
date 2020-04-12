@@ -2,6 +2,8 @@
 
 namespace Iman\Streamer;
 
+use Iman\Streamer\Events\VideoStreamStarted;
+
 class VideoStreamer
 {
     private $path = '';
@@ -18,11 +20,19 @@ class VideoStreamer
 
     private $mime = '';
 
+    /**
+     * @var Video
+     */
+    private $video;
+
     public function __construct($filePath, $stream)
     {
         $this->path = $filePath;
         $this->stream = $stream;
         $this->mime = mime_content_type($filePath);
+
+        $this->video = new Video();
+        $this->video->setPath($this->path);
     }
 
     /**
@@ -95,6 +105,9 @@ class VideoStreamer
      */
     private function stream()
     {
+        $this->video->setProgress($this->start);
+        event(new VideoStreamStarted($this->video));
+
         $i = $this->start;
         set_time_limit(0);
         while (! feof($this->stream) && $i <= $this->end) {

@@ -26,6 +26,13 @@ class Video
     private $size;
 
     /**
+     * Video progress.
+     *
+     * @var int
+     */
+    private $progress;
+
+    /**
      * @return string
      */
     public function getPath(): string
@@ -55,12 +62,16 @@ class Video
     public function setPath(string $path): void
     {
         $this->path = $path;
+
+        $this->setMime(mime_content_type($path));
+
+        $this->setSize(filesize($path));
     }
 
     /**
      * @param  string  $mime
      */
-    public function setMime(string $mime): void
+    private function setMime(string $mime): void
     {
         $this->mime = $mime;
     }
@@ -68,8 +79,24 @@ class Video
     /**
      * @param  int  $size
      */
-    public function setSize(int $size): void
+    private function setSize(int $size): void
     {
         $this->size = $size;
+    }
+
+    /**
+     * @return int
+     */
+    public function getProgress(): int
+    {
+        return $this->progress;
+    }
+
+    /**
+     * @param  int  $progress
+     */
+    public function setProgress(int $progress): void
+    {
+        $this->progress = $progress;
     }
 }
