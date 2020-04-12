@@ -11,7 +11,7 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use Iman\Streamer\Video;
 
-class VideoStreamFinished
+class VideoStreamEnded
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     /**
