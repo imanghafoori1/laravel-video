@@ -24,7 +24,6 @@ class VideoStreamStarted
     public function __construct(Video $video)
     {
         $this->video = $video;
-        info('video ended');
     }
 
     /**
