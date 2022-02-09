@@ -22,8 +22,8 @@
     }
   },
   "require": {
-       "php": "7.2.*|7.3.*|7.4.*|8.*",
-       "laravel/framework": "~5.1|6.*|7.*|8.*"
+       "php": "7.2.*|7.3.*|7.4.*|8.0.*|8.1.*",
+       "laravel/framework": "~5.1|6.*|7.*|8.*|9.*"
   },
   "autoload-dev": {
     "classmap": [
