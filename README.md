@@ -3,7 +3,6 @@
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-video"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-video.svg?style=round-square" alt="Quality Score"></img></a>
 [![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=round-square)](LICENSE.md)
 [![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-video/v/stable)](https://packagist.org/packages/imanghafoori/laravel-video)
-[![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-video/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-video/build-status/master)
 [![Monthly Downloads](https://poser.pugx.org/imanghafoori/laravel-video/d/monthly)](https://packagist.org/packages/imanghafoori/laravel-video)
 [![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-video/downloads)](https://packagist.org/packages/imanghafoori/laravel-video)
 
@@ -75,22 +74,11 @@ As always if you found this package useful and you want to encourage us to maint
 
 ----------------
 
-### Laravel Self Test
+### Laravel Microscope
 
-:gem: It automatically tests your laravel application
+:gem: Test your laravel application without writing tests!
 
-- https://github.com/imanghafoori1/laravel-self-test
+- https://github.com/imanghafoori1/laravel-microscope
 
 ----------------
 
-
-### 🍌 Reward me a crypto-banana 🍌
-so that I will have energy to start the next package for you.
-
-- Dodge Coin: DJEZr6GJ4Vx37LGF3zSng711AFZzmJTouN
-- LiteCoin: ltc1q82gnjkend684c5hvprg95fnja0ktjdfrhcu4c4
-- BitCoin: bc1q53dys3jkv0h4vhl88yqhqzyujvk35x8wad7uf9
-- Ripple: rJwrb2v1TR6rAHRWwcYvNZxjDN2bYpYXhZ
-- Etherium: 0xa4898246820bbC8f677A97C2B73e6DBB9510151e
-
---------------
