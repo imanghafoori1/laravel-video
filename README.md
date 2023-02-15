@@ -56,22 +56,6 @@ As always if you found this package useful and you want to encourage us to maint
 
 - https://github.com/imanghafoori1/laravel-widgetize
 
------------------
-
-### Laravel Terminator
-
- :gem: A minimal yet powerful package to give you opportunity to refactor your controllers.
-
-- https://github.com/imanghafoori1/laravel-terminator
-
------------------
-
-### Eloquent Relativity
-
-:gem: It allows you to decouple your eloquent models to reach a modular structure
-
-- https://github.com/imanghafoori1/eloquent-relativity
-
 ----------------
 
 ### Laravel Microscope
