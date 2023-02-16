@@ -9,13 +9,13 @@
 ### Built with :heart: for every smart laravel developer
 
 
-## Installation:
+### Installation:
 
 Install via Composer
 
     composer require imanghafoori/laravel-video
 
-## Usage:
+### Usage:
 
 ```php
 <?php
@@ -33,18 +33,19 @@ Route::get('/home', function () {
 That's it ! you can play your video file !
 You do not need to `return` from your controller
 
-## Compatibility:
+#### Compatibility:
 
 - Laravel: v5.1 or above
 - Php: 7.2 or above
 
 --------------------
 
-### :raising_hand: Contributing 
+### :raising_hand: Contributing:
+
 If you find an issue, or have a better way to do something, feel free to open an issue or a pull request.
 
 ### :star: Your Stars Make Us Do More :star:
-As always if you found this package useful and you want to encourage us to maintain and work on it. Just press the star button to declare your willing.
+As always if you found this package useful and you want to encourage us to maintain and work on it. Just press the star button to declare your willingness.
 
 
 
