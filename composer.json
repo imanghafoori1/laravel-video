@@ -22,7 +22,7 @@
     }
   },
   "require": {
-       "php": "7.2.*|7.3.*|7.4.*|8.0.*|8.1.*|8.2.*|8.3.*",
+       "php": "7.2.*|7.3.*|7.4.*|8.0.*|8.1.*|8.2.*|8.3.*|8.4.*|8.5.*|8.6.*|8.7.*",
        "laravel/framework": "~5.1|6.*|7.*|8.*|9.*|10.*|11.*"
   },
   "autoload-dev": {
@@ -40,5 +40,10 @@
     "imanghafoori/laravel-terminator": "Gives you opportunity to refactor your controllers.",
     "imanghafoori/laravel-anypass": " Allows you login with any password in local environment.",
     "imanghafoori/laravel-masterpass": "You can easily set a master password without code change."
+  },
+  "config": {
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
+    }
   }
 }
